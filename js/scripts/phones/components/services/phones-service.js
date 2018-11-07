@@ -5,22 +5,14 @@ const phonesService = {
     
         let xhr = new XMLHttpRequest();
 
-        xhr.open('GET', 'phones.json', true);
+        xhr.open('GET', '/api/phones.json', false);
         
-        xhr.send(); // (1)
-        
-        xhr.onreadystatechange = function() { // (3)
-            if (xhr.readyState != 4) return;
-        
-            button.innerHTML = 'Готово!';
-        
-            if (xhr.status != 200) {
-            alert(xhr.status + ': ' + xhr.statusText);
-            } else {
-            alert(xhr.responseText);
-            }
-        
-        }   
+        xhr.send(); 
+
+        console.log(xhr.status, xhr.statusText);
+        console.log(xhr.responseText);
+
+        return JSON.parse(xhr.responseText);
 
     }
 };

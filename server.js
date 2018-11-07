@@ -8,7 +8,7 @@ let file = new static.Server('.', {
   });
   
   function accept(req, res) {
-    if (req.url.startsWith('/app/api')) {
+    if (req.url.startsWith('/api')) {
       req.url += '.json';
 
       setTimeout(() => {

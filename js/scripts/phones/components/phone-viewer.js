@@ -24,7 +24,7 @@ export default class PhoneViewer extends Component {
     _render() {
         this._element.innerHTML = `
             <div>
-                <img src="images/phones/motorola-xoom-with-wi-fi.0.jpg" alt="" class="phone">
+                <img src="img/phones/motorola-xoom-with-wi-fi.0.jpg" alt="" class="phone">
 
                 <button data-element='back-button'>back to lost</button>
                 <button>Add to basket</button>
@@ -36,12 +36,12 @@ export default class PhoneViewer extends Component {
                 </p>
 
                 <ul class="phone-thumbs">
-                    <li><img src="images/phones/motorola-xoom-with-wi-fi.0.jpg" alt="picture"></li>
-                    <li><img src="images/phones/motorola-xoom-with-wi-fi.1.jpg" alt="picture"></li>
-                    <li><img src="images/phones/motorola-xoom-with-wi-fi.2.jpg" alt="picture"></li>
-                    <li><img src="images/phones/motorola-xoom-with-wi-fi.3.jpg" alt="picture"></li>
-                    <li><img src="images/phones/motorola-xoom-with-wi-fi.4.jpg" alt="picture"></li>
-                    <li><img src="images/phones/motorola-xoom-with-wi-fi.5.jpg" alt="picture"></li>
+                    <li><img src="img/phones/motorola-xoom-with-wi-fi.0.jpg" alt="picture"></li>
+                    <li><img src="img/phones/motorola-xoom-with-wi-fi.1.jpg" alt="picture"></li>
+                    <li><img src="img/phones/motorola-xoom-with-wi-fi.2.jpg" alt="picture"></li>
+                    <li><img src="img/phones/motorola-xoom-with-wi-fi.3.jpg" alt="picture"></li>
+                    <li><img src="img/phones/motorola-xoom-with-wi-fi.4.jpg" alt="picture"></li>
+                    <li><img src="img/phones/motorola-xoom-with-wi-fi.5.jpg" alt="picture"></li>
                 </ul>
             </div>
             
