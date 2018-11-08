@@ -13,7 +13,7 @@ let file = new static.Server('.', {
 
       setTimeout(() => {  
         file.serve(req, res);
-      }, 1000);
+      }, 5000);
     } else {
       file.serve(req, res);
     }  

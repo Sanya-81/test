@@ -1,18 +1,21 @@
 'use strict';
 
 const phonesService = {
-    getPhones() {
+    loadPhones(callback) {
     
         let xhr = new XMLHttpRequest();
 
-        xhr.open('GET', '/api/phones', false);
+        xhr.open('GET', '/api/phones', true);
         
         xhr.send(); 
 
+        xhr.onload = () => {
         console.log(xhr.status, xhr.statusText);
 
-        return JSON.parse(xhr.responseText);
+        let data = JSON.parse(xhr.responseText);
 
+        callback(data);
+        };
     }  
 };
 

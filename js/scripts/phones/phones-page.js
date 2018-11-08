@@ -1,6 +1,6 @@
 'use strict';
+import phonesService from './components/services/phones-service.js';
 import PhonesCatalog from './components/phones-catalog.js';
-import PhonesService from './components/services/phones-service.js';
 import ShoppingCart from './components/shopping-cart.js';
 import PhoneViewer from './components/phone-viewer.js';
 import Search from './components/search.js';
@@ -12,8 +12,11 @@ export default class PhonesPage {
     this._element = element;
     
     this._catalog = new PhonesCatalog({
-      element: this._element.querySelector('[data-component="phones-catalog"]'),
-      phones: PhonesService.getPhones(),
+      element: this._element.querySelector('[data-component="phones-catalog"]')
+    });
+
+    phonesService.loadPhones((phones) => {
+      this._catalog.setPhones(phones);
     });
 
       this._catalog.on('phoneSelected', (event) => {
