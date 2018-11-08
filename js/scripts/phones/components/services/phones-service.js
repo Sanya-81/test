@@ -16,6 +16,23 @@ const phonesService = {
 
         callback(data);
         };
+    },  
+
+    loadPhone(phoneId, callback) {
+    
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('GET', `/api/phones/${phoneId}`, true);
+        
+        xhr.send(); 
+
+        xhr.onload = () => {
+        console.log(xhr.status, xhr.statusText);
+
+        let data = JSON.parse(xhr.responseText);
+
+        callback(data);
+        };
     }  
 };
 

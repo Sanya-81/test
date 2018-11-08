@@ -19,11 +19,13 @@ export default class PhonesPage {
       this._catalog.setPhones(phones);
     });
 
-      this._catalog.on('phoneSelected', (event) => {
-        let phoneId = event.detail;
-      
-        this._viewer.show();
+    this._catalog.on('phoneSelected', (event) => {
+      let phoneId = event.detail;
+    
+      phonesService.loadPhone(phoneId, (phone) => {
+        this._viewer.show(phone);
         this._catalog.hide();
+      });  
     });
 
     this._catalog.on('add', (event) => {
