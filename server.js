@@ -11,7 +11,7 @@ let file = new static.Server('.', {
     if (req.url.startsWith('/api')) {
       req.url += '.json';
 
-      setTimeout(() => {
+      setTimeout(() => {  
         file.serve(req, res);
       }, 1000);
     } else {

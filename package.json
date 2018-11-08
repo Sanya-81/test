@@ -1,0 +1,23 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanya-81/test.git"
+  },
+  "author": "sanya-81",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sanya-81/test/issues"
+  },
+  "homepage": "https://github.com/Sanya-81/test#readme",
+  "devDependencies": {
+    "node-static": "^0.7.11"
+  }
+}
