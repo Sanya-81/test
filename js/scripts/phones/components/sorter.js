@@ -1,10 +1,16 @@
+import Component from "../../components.js";
+
 'use strict';
 
-export default class Sorter {
+export default class Sorter extends Component{
     constructor({element}) {
-        this._element = element;
+        super({element});
 
         this._render();
+
+        this.on('change', (event) => {
+            this._trigger('changeOrder', event.target.value);
+        });
     }
 
     _render() {
