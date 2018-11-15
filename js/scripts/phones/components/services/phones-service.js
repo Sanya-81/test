@@ -1,8 +1,10 @@
 'use strict';
 
+let BASE_API_URL = 'https://sanya-81.github.io/test/api';
+
 const phonesService = {
     loadPhones(filter, callback) {
-        this._sendRequest('/api/phones', (phones) => {
+        this._sendRequest('/phones', (phones) => {
             const filterdPhones = this._filter(phones, filter.query);
             const sortedPhones = this._sort(filterdPhones, filter.order);
         
@@ -11,12 +13,12 @@ const phonesService = {
     },  
 
     loadPhone(phoneId, callback) {
-        this._sendRequest(`/api/phones/${phoneId}`, callback);
+        this._sendRequest(`/phones/${phoneId}`, callback);
     }, 
 
-    _filter(phohes, query) {
+    _filter(phones, query) {
         if (!query) {
-            return phohes;
+            return phones;
         }
 
         let normaLizedQuery = query.toLowerCase();
@@ -36,8 +38,10 @@ const phonesService = {
 
     _sendRequest( url, callback, { method = 'GET'} = {}) {
         let xhr = new XMLHttpRequest();
+        let fullUrl = BASE_API_URL + url + '.json';
 
-        xhr.open(method, url, true);
+
+        xhr.open(method, fullUrl, true);
         
         xhr.send(); 
 

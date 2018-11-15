@@ -4,16 +4,16 @@ let http = require('http');
 let static = require('node-static');
 let file = new static.Server('.', {
     cache: 0,
-    headers: ''
+    headers: {
+    'Access-Contorl-Origin': '*',
+    }
   });
   
   function accept(req, res) {
     if (req.url.startsWith('/api')) {
-      req.url += '.json';
-
       setTimeout(() => {  
         file.serve(req, res);
-      }, 2000);
+      }, 1000);
     } else {
       file.serve(req, res);
     }  
